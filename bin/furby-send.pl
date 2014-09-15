@@ -74,7 +74,7 @@ sub play_wav {
         $command = 'afplay';
     }
 
-    if ($^O eq 'MSWin32') {
+    if ( ($^O eq 'MSWin32') || ($^O eq 'msys') ) {
         $command = '"'.catfile(dirname(rel2abs($0)), 'win32/dsplay.exe').'"';
     }
 
